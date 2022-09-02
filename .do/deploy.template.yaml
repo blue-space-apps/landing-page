@@ -1,0 +1,8 @@
+spec:
+  name: blue-space-apps-landing-page
+  static_sites:
+    - name: landing-page
+      build_command: "yarn build"
+      git:
+        branch: main
+        repo_clone_url: https://github.com/blue-space-apps/landing-page.git
