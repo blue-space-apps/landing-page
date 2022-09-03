@@ -15,14 +15,16 @@ export default defineConfig({
   routes: [
     {
       path: '/',
-      redirect: '/home',
-    },
-    {
       name: 'home',
-      path: '/home',
+      icon: 'home',
       component: './Home',
     },
+    {
+      path: '/base64',
+      name: 'base64',
+      icon: 'redo',
+      component: './Base64',
+    },
   ],
-
   npmClient: 'yarn',
 });

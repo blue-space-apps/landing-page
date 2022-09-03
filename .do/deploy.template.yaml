@@ -3,6 +3,7 @@ spec:
   static_sites:
     - name: landing-page
       build_command: "yarn build"
+      error_document: index.html
       git:
         branch: main
         repo_clone_url: https://github.com/blue-space-apps/landing-page.git

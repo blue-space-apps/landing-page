@@ -1,4 +1,5 @@
-import { FormattedMessage } from 'umi';
+/* eslint-disable*/
+import { useIntl } from 'umi';
 
 export async function getInitialState(): Promise<{
   name: string;
@@ -11,25 +12,32 @@ export async function getInitialState(): Promise<{
 }
 
 export const layout = () => {
+  const intl = useIntl();
+  const msg: string = intl.formatMessage({
+    id: 'title',
+  });
   return {
     fixSiderbar: true,
+    fixedHeader: true,
     layout: 'mix',
     navTheme: 'light',
-    colorPrimary: '#1677FF',
+    breakpoint: false,
+    headerTheme: 'light',
     contentWidth: 'Fluid',
+    defaultCollapsed: true,
+    title: msg,
+    logo: 'https://www.svgrepo.com/show/36178/universe.svg',
+    menu: {
+      locale: true,
+    },
     appList: [
       {
         icon: 'https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png',
         title: 'Github',
         desc: 'Github Repo',
-        url: 'https://github.com/blue-space-apps/',
+        url: 'https://github.com/blue-space-apps',
+        target: '_blank',
       },
     ],
-    title: <FormattedMessage id="title" />,
-    splitMenus: true,
-    logo: 'https://www.svgrepo.com/show/36178/universe.svg',
-    menu: {
-      locale: true,
-    },
   };
 };
